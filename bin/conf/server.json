@@ -9,8 +9,8 @@
                 //这个模块所属进程,非常重要,进程会根据该参数来判断是否需要运行该模块 [development]为默认值代表开发环境
                 "ProcessID":"development",
                 "Settings":{
-                    "WSAddr":      	 ":3653",
-                    "TCPAddr":     	 ":3563",
+                    "WSAddr":      	 ":6653",
+                    "TCPAddr":     	 ":6563",
                     "Tls"        :   false,
                     "CertFile"       :   "",
                     "KeyFile"        :   ""
@@ -28,9 +28,8 @@
                 "Id":"WebApp001",
                 "ProcessID":"development",
                 "Settings":{
-                    "StaticPath":      	 "/opt/go/loolgame/static",
-                    "ResourcePath":       "bin/devildom",
-                    "Port": 7050
+                    "StaticPath":      	 "./static",
+                    "Port": 6565
                 }
             }
         ],

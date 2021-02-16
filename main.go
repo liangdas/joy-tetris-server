@@ -13,6 +13,7 @@ import (
 	"joysrv/account"
 	"joysrv/gate"
 	"joysrv/tetris"
+	"joysrv/webapp"
 	"net/http"
 	"time"
 )
@@ -33,7 +34,7 @@ func main() {
 	app := mqant.CreateApp(
 		module.Debug(true), //是否开启debug模式
 		module.Nats(nc),    //指定nats rpc
-		module.WorkDir("/work/go/joy-tetris-server"),
+		//module.WorkDir("/work/go/joy-tetris-server"),
 		//module.Configure("/work/go/joy-tetris-server/bin/conf/server.json"), // 配置
 		module.ProcessID("development"), //模块组ID
 	)
@@ -78,5 +79,6 @@ _:
 		account.Module(),
 		mgate.Module(),
 		tetris.Module(),
+		webapp.Module(),
 	)
 }
