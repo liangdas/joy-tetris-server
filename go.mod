@@ -10,6 +10,8 @@ require (
 	github.com/google/uuid v1.1.1 // indirect
 	github.com/hashicorp/consul/api v1.2.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.3 // indirect
+	github.com/labstack/echo v3.3.10+incompatible
+	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/liangdas/joy-tetris-protobuf v1.0.2
 	github.com/liangdas/mqant v1.4.5
 	github.com/liangdas/mqant-modules v1.3.5
