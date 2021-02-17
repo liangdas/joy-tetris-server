@@ -45,18 +45,18 @@
 
     [http://127.0.0.1:6565/static/tetris/index.html#/](http://127.0.0.1:6565/static/tetris/index.html#/)
     
-> 建议使用移动设备调试模式   
-![web客户端](markdown/web-client.png)
-
-> 双人经典模式
-![双人经典模式](markdown/double-classic.gif)
-
-> 双人快速模式
-![双人快速模式](markdown/double-quick.gif)
+    + 建议使用移动设备调试模式   
+    ![web客户端](markdown/web-client.png)
+    
+    + 双人经典模式
+    ![双人经典模式](markdown/double-classic.gif)
+    
+    + 双人快速模式
+    ![双人快速模式](markdown/double-quick.gif)
 
 5. macos客户端
 
 [双人俄罗斯方块客户端-flutter版](https://github.com/liangdas/joy-tetris-flutter)
 
-|-.....
-|-joy_tetris_flutter_macos.zip (已编译好的macos执行文件)
+    |-.....
+    |-joy_tetris_flutter_macos.zip (已编译好的macos执行文件)
