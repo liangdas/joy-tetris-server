@@ -2,7 +2,6 @@ package tetris
 
 import (
 	"github.com/dyrkin/fsm"
-	"github.com/liangdas/mqant/log"
 	"joysrv/component"
 	"math/rand"
 	"time"
@@ -121,12 +120,12 @@ func (table *Table) BeginState(event *fsm.Event) *fsm.NextState {
 				if ty == component.FULL {
 					g, err := GzipEncode(data)
 					if err == nil {
-						log.Info("stores,GZIP %v  %v", len(g), len(data))
+						//log.Info("stores,GZIP %v  %v", len(g), len(data))
 						_ = table.NotifyRealMsg("/tetris/grid/data/", g)
 					}
 
 				} else if ty == component.PATCH {
-					log.Info("table,PATCH %v", len(data))
+					//log.Info("table,PATCH %v", len(data))
 					_ = table.NotifyRealMsg("/tetris/grid/patch/", data)
 				}
 			}

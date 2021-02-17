@@ -39,3 +39,5 @@ RUN chmod a+x /app/start.sh
 RUN chmod a+x /app/stop.sh
 RUN chmod a+x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
+#docker tag joy-tetris  1587790525/joy-tetris
