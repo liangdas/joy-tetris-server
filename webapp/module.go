@@ -22,8 +22,8 @@ var Module = func() *WebApp {
 // Web 结构对象基于 BaseModule
 type WebApp struct {
 	basemodule.BaseModule
-	StaticPath   string
-	Port         int
+	StaticPath string
+	Port       int
 }
 
 // GetType 获取模块类型标识
@@ -44,7 +44,6 @@ func (self *WebApp) OnInit(app module.App, settings *conf.ModuleSettings) {
 	self.StaticPath = self.GetModuleSettings().Settings["StaticPath"].(string)
 	self.Port = int(self.GetModuleSettings().Settings["Port"].(float64))
 }
-
 
 func registerFilter(e *echo.Echo) {
 	// middleware

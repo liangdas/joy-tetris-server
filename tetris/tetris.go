@@ -16,8 +16,9 @@ package tetris
 import (
 	"github.com/golang/protobuf/proto"
 	pb "github.com/liangdas/joy-tetris-protobuf/golang/message"
+	"github.com/liangdas/mqant-modules/component"
 	"github.com/pkg/errors"
-	"joysrv/component"
+	"joysrv/comp"
 	"math"
 )
 
@@ -52,7 +53,7 @@ func NewSkeleton(Type string, SeatIndex, Index, startx, starty, frame int) *Skel
 			x: startx,
 			y: starty,
 		},
-		interval: component.NewInterval(0, 1000),
+		interval: comp.NewInterval(0, 1000),
 	}
 	return this
 }
@@ -63,14 +64,14 @@ func NewSkeleton(Type string, SeatIndex, Index, startx, starty, frame int) *Skel
 //0,0,0,0,
 //0,0,0,0
 type Skeleton struct {
-	ttype     string //方块类型，跟配置中对应 //类型 I O T J S L Z
-	index     int	 //变换索引 0 - 3
-	frame     int    //创建这个块的帧数，可以用来防抖
-	seatIndex int    // 方块所属玩家
-	point     *Point //方块当前所在游戏画布中的坐标
-	lattice   [][]int//点阵4*4
+	ttype     string  //方块类型，跟配置中对应 //类型 I O T J S L Z
+	index     int     //变换索引 0 - 3
+	frame     int     //创建这个块的帧数，可以用来防抖
+	seatIndex int     // 方块所属玩家
+	point     *Point  //方块当前所在游戏画布中的坐标
+	lattice   [][]int //点阵4*4
 	started   bool
-	interval  *component.Interval
+	interval  *comp.Interval
 }
 
 func (this *Skeleton) GetSeatIndex() int {
@@ -138,7 +139,7 @@ func (this *Skeleton) Point() *Point {
 	return this.point
 }
 
-func (this *Skeleton) Interval() *component.Interval {
+func (this *Skeleton) Interval() *comp.Interval {
 	return this.interval
 }
 
@@ -296,7 +297,7 @@ func NewGrid(width, height, winheight int) *Grid {
 		blocks:    make([]*Block, width*height),    //完整画布大小，在快速模式下画布高度会大于可见窗口高度
 		render:    make([]*Block, width*winheight), //渲染画布
 	}
-	this.OnInitDataSync(this)
+	this.OnInitDataSync(this, 24)
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
 			if ((height - y) < 3) && x < width-3 {
@@ -312,8 +313,8 @@ func NewGrid(width, height, winheight int) *Grid {
 			this.render[x+y*width] = &Block{}
 		}
 	}
-	this.interval = component.NewInterval(0, 500)
-	this.slidingInterval = component.NewInterval(0, 10000)
+	this.interval = comp.NewInterval(0, 500)
+	this.slidingInterval = comp.NewInterval(0, 10000)
 	return this
 }
 
@@ -326,8 +327,8 @@ type Grid struct {
 	blocks          []*Block //块
 	render          []*Block //画布块数据
 	gameover        bool
-	interval        *component.Interval
-	slidingInterval *component.Interval
+	interval        *comp.Interval
+	slidingInterval *comp.Interval
 }
 
 func (this *Grid) GameOver() bool {
