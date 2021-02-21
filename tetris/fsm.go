@@ -2,7 +2,7 @@ package tetris
 
 import (
 	"github.com/dyrkin/fsm"
-	"joysrv/component"
+	"github.com/liangdas/mqant-modules/component"
 	"math/rand"
 	"time"
 )

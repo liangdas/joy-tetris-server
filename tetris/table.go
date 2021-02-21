@@ -20,7 +20,7 @@ import (
 	"github.com/liangdas/mqant-modules/room"
 	"github.com/liangdas/mqant/log"
 	"github.com/liangdas/mqant/module"
-	"joysrv/component"
+	"joysrv/comp"
 	"math/rand"
 	"reflect"
 	"time"
@@ -59,7 +59,7 @@ type Table struct {
 	grid            *Grid
 	gameTypeInfo    *pb.S2S_Tetris_Create
 	skeletonQueue   *SkeletonQueue
-	heartbeat       *component.Interval
+	heartbeat       *comp.Interval
 }
 
 func NewTable(module module.RPCModule, opts ...room.Option) (*Table, error) {
@@ -98,6 +98,6 @@ func NewTable(module module.RPCModule, opts ...room.Option) (*Table, error) {
 	this.Register("5", this.doSyncInfo)
 	this.Register("6", this.doHD)
 	this.Register("8", this.OperationSkeleton)
-	this.heartbeat = component.NewInterval(0, 1000) //1秒一次心跳
+	this.heartbeat = comp.NewInterval(0, 1000) //1秒一次心跳
 	return this, nil
 }

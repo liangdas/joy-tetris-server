@@ -14,7 +14,7 @@ require (
 	github.com/labstack/gommon v0.3.0 // indirect
 	github.com/liangdas/joy-tetris-protobuf v1.0.2
 	github.com/liangdas/mqant v1.4.5
-	github.com/liangdas/mqant-modules v1.3.5
+	github.com/liangdas/mqant-modules v1.3.6
 	github.com/miekg/dns v1.1.15 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/nats-io/nats.go v1.9.1

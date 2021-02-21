@@ -1,4 +1,4 @@
-package component
+package comp
 
 type Button interface {
 	SetFrontCall(frontcall map[string]interface{}) error
